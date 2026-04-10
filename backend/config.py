@@ -16,7 +16,10 @@ SMOOVE_TEST_LIST = 1124084
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "https://pzvmwfexeiruelwiujxn.supabase.co")
 SUPABASE_KEY = os.environ.get("SUPABASE_KEY", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB6dm13ZmV4ZWlydWVsd2l1anhuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NTM1NzUsImV4cCI6MjA5MTEyOTU3NX0.U5agLkf6jfLUg7UjfdnTJfavUsx-dyzxs2fxJgWAp8o")
 
-UPLOAD_DIR = os.path.join(os.path.dirname(__file__), "uploads")
+if os.environ.get("VERCEL"):
+    UPLOAD_DIR = "/tmp/uploads"
+else:
+    UPLOAD_DIR = os.path.join(os.path.dirname(__file__), "uploads")
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
 # Logo URLs
