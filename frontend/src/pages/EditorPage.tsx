@@ -18,6 +18,7 @@ export function EditorPage() {
   const [moreshetUrl, setMoreshetUrl] = useState("")
   const [loading, setLoading] = useState(false)
   const [driveUploading, setDriveUploading] = useState(false)
+  const [messageType, setMessageType] = useState<"parsha" | "motza_sh">("parsha")
 
   useEffect(() => {
     if (!id) return
@@ -42,7 +43,7 @@ export function EditorPage() {
     setUploading(true)
     const formData = new FormData()
     formData.append("file", file)
-    formData.append("message_type", "parsha")
+    formData.append("message_type", messageType)
 
     try {
       const res = await fetch("/api/upload", {
@@ -78,6 +79,28 @@ export function EditorPage() {
         <p className="text-brown-light text-center mb-8">
           העלה קובץ DOCX כדי להתחיל
         </p>
+        <div className="flex justify-center gap-2 mb-4">
+          <button
+            onClick={() => setMessageType("parsha")}
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+              messageType === "parsha"
+                ? "bg-gold text-white"
+                : "bg-cream text-brown border border-brown-light/20 hover:border-gold/50"
+            }`}
+          >
+            פרשת שבוע
+          </button>
+          <button
+            onClick={() => setMessageType("motza_sh")}
+            className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+              messageType === "motza_sh"
+                ? "bg-gold text-white"
+                : "bg-cream text-brown border border-brown-light/20 hover:border-gold/50"
+            }`}
+          >
+            מסר מוצ״ש
+          </button>
+        </div>
         <UploadZone onUpload={handleUpload} isLoading={uploading} />
         <div className="mt-6 text-center">
           <Link to="/archive">
