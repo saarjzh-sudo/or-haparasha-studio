@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #fdf6ec;
+  --color-cream-dark: #f5e6cc;
+  --color-gold: #c9a84c;
+  --color-gold-dark: #a68a3e;
+  --color-brown: #5c3d2e;
+  --color-brown-light: #8b6f47;
+  --font-sans: "Heebo", "Rubik", sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--color-cream);
+  direction: rtl;
+}
+
+#root {
+  min-height: 100vh;
+}
