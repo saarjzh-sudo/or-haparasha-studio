@@ -6,3 +6,4 @@ __pycache__/
 backend/uploads/
 .vite/
 .vercel/
+.vercel

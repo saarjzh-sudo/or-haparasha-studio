@@ -158,7 +158,7 @@ export function EditorPage() {
                     }
                   }}
                 />
-                <Button variant="outline" size="sm" disabled={driveUploading} asChild={false}
+                <Button variant="outline" size="sm" disabled={driveUploading}
                   onClick={(e) => {
                     const input = (e.currentTarget as HTMLElement).parentElement?.querySelector('input[type="file"]') as HTMLInputElement
                     input?.click()

@@ -1,6 +1,5 @@
 import { useCallback, useState } from "react"
 import { Upload, FileText, Loader2 } from "lucide-react"
-import { Button } from "./ui/button"
 
 interface UploadZoneProps {
   onUpload: (file: File) => void

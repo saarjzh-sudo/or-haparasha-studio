@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
-import { FileText, Clock, Send, ChevronLeft } from "lucide-react"
+import { FileText, Clock, ChevronLeft } from "lucide-react"
 import { Button } from "../components/ui/button"
 
 interface Message {
